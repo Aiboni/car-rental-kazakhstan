@@ -33,3 +33,38 @@ Spec-Driven Development
 
 ## Project Status
 Planning and Specification
+
+## PostgreSQL Database Setup
+
+### Requirements
+- PostgreSQL 17
+- Python 3
+- SQLAlchemy
+- Alembic
+- Psycopg
+
+### Configuration
+
+Create a .env file in the project root:
+
+DATABASE_URL=postgresql+psycopg://car_rental_user:YOUR_PASSWORD@localhost:5432/car_rental_db
+
+Replace YOUR_PASSWORD with your local database password.
+Never commit .env to GitHub.
+
+### Apply database migrations
+
+Run:
+
+    .\.venv\Scripts\python.exe -m alembic upgrade head
+
+### Run automated tests
+
+Run:
+
+    .\.venv\Scripts\python.exe -m pytest -q
+
+### Current database tables
+
+- users
+- alembic_version
